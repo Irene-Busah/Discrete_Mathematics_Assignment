@@ -1,22 +1,33 @@
 # Question 4
-A = [item for item in input("Please the values for list A:").split()]
-# Setting the list size for R
-list_size_R = 2
-values_input = int(input("Please enter the number of times you are going to input values:"))
-R = []
-values_r = [[int(input("Enter a value")) for _ in range(list_size_R)]]
-R.append(values_r)
-R = set(R)
-print("R is a set")
-# performing cartesian product of  A X A
-product_A = []
-for i in A:
-    for j in A:
-        answer = (i, j)
-        product_A.append(answer)
-print("Product of A x A is = ")
-product_A = set(product_A)
-print(product_A)
-# # Checking if R is a subset of A x A
-possible_R_subset_A = R.issubset(product_A)
-print(possible_R_subset_A)
+# Input list R
+# Number of sub lists
+
+list_size = 2
+num_list = int(input("Please enter the number of sublist you will input: "))
+list_r = [[int(input("Please enter a single number and press enter: ")) for _ in range(list_size)]
+          for _ in range(num_list)]
+print(list_r)
+
+
+# Input the list A
+
+
+# Checking if R is a set by checking if the list R has any duplicates
+def checking_duplicatesR():
+    """Checking if the given list R contains any duplicates"""
+    if len(list_r) == len(set(list_r)):
+        print("R is a set")
+
+    else:
+        print("R is not a set")
+
+
+def cartesian_product_A():
+    """Input the list A and perform the cartesian product of A"""
+    list_a = [item for item in input("Please the values for list A:").split()]
+    product_a = []
+    for i in list_a:
+        for j in list_a:
+            answer = (i, j)
+            product_a.append(answer)
+
