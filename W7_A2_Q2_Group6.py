@@ -10,53 +10,53 @@
 # As well as the code, submit 1 example in your write-up of sets A and B and the outputted values
 # for a)-c).
 
-# Getting user input
-a = [int(item) for item in input("Enter the values for A").split()]
-b = [int(item) for item in input("Enter the values for B").split()]
-
-# converting user input list a and b to sets
-values_a = set(a)
-values_b = set(b)
-
-# checking A - B
-possible_set_difference = values_a.difference(values_b)
-print(possible_set_difference)
-
-# checking  B ⊆ A
-possible_b_subseta = values_b.issubset(values_a)
-print(possible_b_subseta)
-
-# checking A x B
-cartesian_product = [{i, j} for i in a for j in b]
-cartesian_product_set = set(cartesian_product)
-print(cartesian_product_set)
+# # Getting user input
+# a = [int(item) for item in input("Enter the values for A").split()]
+# b = [int(item) for item in input("Enter the values for B").split()]
+#
+# # converting user input list a and b to sets
+# values_a = set(a)
+# values_b = set(b)
+#
+# # checking A - B
+# possible_set_difference = values_a.difference(values_b)
+# print(possible_set_difference)
+#
+# # checking  B ⊆ A
+# possible_b_subseta = values_b.issubset(values_a)
+# print(possible_b_subseta)
+#
+# # checking A x B
+# cartesian_product = [{i, j} for i in a for j in b]
+# cartesian_product_set = set(cartesian_product)
+# print(cartesian_product_set)
 
 # -------------------------- SAME CODE USING FUNCTIONS -----------------------------
 
-# def set_checker(list_one, list_two):
-#
-#     # converts the lists to sets
-#     set_A = set(list_one)
-#     set_B = set(list_two)
-#
-#     # checking A - B
-#     set_difference = set_A.difference(set_B)
-#     print("\nA - B: {}".format(set_difference))
-#     print("")
-#
-#     # checking B ⊆ A
-#     subset = set_B.issubset(set_A)
-#     print("B ⊆ A: {}".format(subset))  # returns either true or false
-#     print("")
-#
-#     # checking A x B
-#     for i in list_one:
-#         for j in list_two:
-#             new_set = {i, j}
-#             print(new_set)
-#
-#
-# list_A = [1, 2, 4]
-# list_B = [5, 4, 6]
-# set_checker(list_A, list_B)
-#
+def set_checker(list_one, list_two):
+
+    # converts the lists to sets
+    set_A = set(list_one)
+    set_B = set(list_two)
+
+    # checking A - B
+    set_difference = set_A.difference(set_B)
+    print("\nA - B: {}".format(set_difference))
+    print("")
+
+    # checking B ⊆ A
+    subset = set_B.issubset(set_A)
+    print("B ⊆ A: {}".format(subset))  # returns either true or false
+    print("")
+
+    # checking A x B
+    for i in list_one:
+        for j in list_two:
+            new_set = {i, j}
+            print(new_set)
+
+
+list_A = [1, 2, 4]
+list_B = [5, 4, 6]
+set_checker(list_A, list_B)
+

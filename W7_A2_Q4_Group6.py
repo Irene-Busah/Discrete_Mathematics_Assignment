@@ -1,4 +1,16 @@
 # Question 4
+# Write a programme that takes as input a finite set or list (you may decide) A and a list R where
+# R is of the form (written mathematically):
+# R = {(x1, y1),(x2, y2), ...,(xn, yn)}.
+# Your code should first check if R is a relation on A (that is, if R is a set and if R ⊆ A × A).
+# If R is not a relation on A, your programme should output a statement to this effect.
+# If R is a relation on A then your programme should output which of the following properties
+# the relation satisfies:
+# a) reflexive,
+# b) transitive, and/or
+# c) symmetric.
+
+
 # Input list R
 # Number of sub lists
 
@@ -23,7 +35,10 @@ def checking_duplicatesR():
         else:
             print("R is a set")
 
+
 checking_duplicatesR()
+
+
 # Input the list A and performing the cartesian product
 def cartesian_product_A():
     """Input the list A and perform the cartesian product of A"""
