@@ -57,3 +57,6 @@ def r_subset_cartesian_productA(product_a, list_r):
 # else:
 #     print("R is not a relation on A")
 # possible_set_r = set([i for j in list_r for i in j])
+
+
+

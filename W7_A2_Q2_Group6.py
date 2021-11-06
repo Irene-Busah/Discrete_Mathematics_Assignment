@@ -34,7 +34,7 @@ def set_checker(list_one, list_two):
             print(new_set)
 
 
-# Test Data 
+# Test Data
 list_A = [1, 2, 4]
 list_B = [5, 4, 6]
 set_checker(list_A, list_B)
