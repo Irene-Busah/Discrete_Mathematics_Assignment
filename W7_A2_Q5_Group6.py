@@ -23,8 +23,16 @@ def proper_subset(set_X, set_Y):
                 # print(f'{y} / {x} = {False}')
                 return False
 
-
+# Test data
 lst_one = [4, 8, 2]
 lst_two = [3, 7, 11]
 
 print(proper_subset(lst_one, lst_two))
+
+# # Suggested extra code for how the program would work using user input
+# user_input_X = input("Please enter the values for list X:").split(",")
+# user_input_Y = input("Please enter the values for list Y:").split(",")
+# # Converts user input into an int and adds them to the list
+# lst_one_X = [int(i) for i in user_input_X]
+# lst_two_Y = [int(i) for i in user_input_Y]
+# print(proper_subset(lst_one_X, lst_two_Y))
