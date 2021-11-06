@@ -15,9 +15,11 @@ def finite_list(list_A, list_B):
     # The condition to check whether the list_B is a subset of list_A
     for item in new_list_B:
         if item not in new_list_A:
-            return "B is not a subset of A"
-        else:
-            return "B is a subset of A"
+            return "False, B is not a subset of A"
+        # if len(new_list_A) > len(new_list_B):
+        #     return False
+        # else:
+    return "True, B is a subset of A"
 
 
 def list_difference(list_A, list_B):
@@ -29,19 +31,36 @@ def list_difference(list_A, list_B):
 
 
 def cartesian_product(list_A, list_B):
-    cartesian_pro = [[a, b] for a in list_A.split(",") for b in list_B.split(",")]
+    cartesian_pro = [[a, b] for a in list_A for b in list_B]
     return cartesian_pro
 
 
 # accepts input from the user
 
-list_1 = input("Enter the list of A: ")
-list_2 = input("Enter the list of B: ")
+list_1 = ["Irene", "Myra", "Nelson", "Micheal"]
+list_2 = ["Irene", "Micheal", "Mike"]
 
 # calls the respective functions for each
 results = finite_list(list_1, list_2)
-answers = list_difference(list_1, list_2)
-result = cartesian_product(list_1, list_2)
 print(results)
+print("")
+answers = list_difference(list_1, list_2)
 print(answers)
+print("")
+result = cartesian_product(list_1, list_2)
 print(result)
+print("")
+
+list_one = ["Irene", "Myra", "Nelson", "Micheal"]
+list_two = ["Irene", "Micheal"]
+
+# calls the respective functions for each
+results = finite_list(list_one, list_two)
+print(results)
+print("")
+answers = list_difference(list_one, list_two)
+print(answers)
+print("")
+result = cartesian_product(list_one, list_two)
+print(result)
+

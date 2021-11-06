@@ -41,12 +41,12 @@ print(cartesian_product_set)
 #
 #     # checking A - B
 #     set_difference = set_A.difference(set_B)
-#     print(set_difference)
+#     print("\nA - B: {}".format(set_difference))
 #     print("")
 #
 #     # checking B ⊆ A
 #     subset = set_B.issubset(set_A)
-#     print(subset)  # returns either true or false
+#     print("B ⊆ A: {}".format(subset))  # returns either true or false
 #     print("")
 #
 #     # checking A x B
@@ -56,7 +56,7 @@ print(cartesian_product_set)
 #             print(new_set)
 #
 #
-# list_A = [1, 2, 3]
+# list_A = [1, 2, 4]
 # list_B = [5, 4, 6]
 # set_checker(list_A, list_B)
-
+#
