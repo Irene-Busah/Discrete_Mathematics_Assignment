@@ -14,25 +14,20 @@
 
 def proper_subset(set_X, set_Y):
 
-    for y in set_Y:
-        for x in set_X:
-            if x / y == 0:
+    for x in set_X:
+        for y in set_Y:
+            if x % y == 0:
                 # print(f'{y} / {x} = {True}')
                 return True
-            elif x / y != 0:
+            elif x % y != 0:
                 # print(f'{y} / {x} = {False}')
                 return False
 
-# Test data
+
 lst_one = [4, 8, 2]
-lst_two = [3, 7, 11]
+lst_two = [4, 3, 11]    # an element (2) in set Y can divides all the elements of set X
+print(proper_subset(lst_one, lst_two))    # RETURN TRUE
 
-print(proper_subset(lst_one, lst_two))
-
-# # Suggested extra code for how the program would work using user input
-# user_input_X = input("Please enter the values for list X:").split(",")
-# user_input_Y = input("Please enter the values for list Y:").split(",")
-# # Converts user input into an int and adds them to the list
-# lst_one_X = [int(i) for i in user_input_X]
-# lst_two_Y = [int(i) for i in user_input_Y]
-# print(proper_subset(lst_one_X, lst_two_Y))
+lst_x = [4, 8, 2]
+lst_y = [5, 3, 11]    # no element in set Y can divide any or all the elements of set X
+print(proper_subset(lst_x, lst_y))  # RETURN FALSE
