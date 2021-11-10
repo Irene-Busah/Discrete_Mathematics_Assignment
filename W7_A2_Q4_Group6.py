@@ -52,21 +52,34 @@ def cartesian_product_A(user_input_A):
 
 
 # checking if R is a subset of A x A
+# def r_subset_cartesian_productA(product_a, list_r):
+#     """Checking if R is a subset of the cartesian product of A"""
+#     # The condition to check whether the list R is a subset of cartesian product of A
+#     for item in list_r:
+#         if item not in product_a:
+#             print("R is not a subset of A * A")
+#             # return "R is not a subset of A * A"
+#         else:
+#             return "R is a subset of A * A"
 def r_subset_cartesian_productA(product_a, list_r):
-    """Checking if R is a subset of the cartesian product of A"""
-    # The condition to check whether the list R is a subset of cartesian product of A
     for item in list_r:
-        if item not in product_a:
-            return "R is not a subset of A * A"
+        if item[0] in product_a and item[1] in product_a:
+            return 'R is a subset of A'
         else:
-            return "R is a subset of A * A"
+            return 'R is not a subset of A'
+
 
 
 # showing that R is not a relation on A
+# def checking_R_relation_A():
+#     if list_r == "R is a set":
+#         if list_r == "R is a subset of A":
+#             print("R is a relation on A")
+        # else:
+        #     print("R is not a relation on A")
 def checking_R_relation_A():
-    if list_r == "R is a set":
-        if list_r == "R is a subset of A":
-            print("R is a relation on A")
+    if list_r == "R is a set" and list_r == "R is a subset of A":
+        print("R is a relation on A")
     else:
         print("R is not a relation on A")
 
@@ -83,6 +96,7 @@ def reflexive(list_r, user_input_A):
 
 # Checking for the property on symmetry on R
 def symmetric(list_r_symmetry):
+    values_not_symmetric = []
     for x in list_r_symmetry:
         for y in list_r_symmetry:
             if x[0] == y[1] and x[1] == y[0] and x not in list_true and y not in list_true:
@@ -94,12 +108,12 @@ def symmetric(list_r_symmetry):
     else:
         for x in list_r_symmetry:
             if x not in list_true:
-                list_true.append(x)
-        print("R is not symmetric ", x)
+                values_not_symmetric.append(x)
+        print("R is not symmetric ", values_not_symmetric)
 
 
 # Test Data for symmetry property of the R relation
-list_r_symmetry = [[1, 2], [1, 1], [2, 3], [4, 6], [1, 3]]
+list_r_symmetry = [[2, 3], [4, 4], [5, 5], [5, 2], [2, 4]]
 list_true = []
 
 
@@ -115,7 +129,6 @@ def transitive(list_r):
                     pass
                 elif x[1] == y[0] and y[1] != z[1] and x[0] != z[0]:
                     list_present.append(z)
-
     if list_present == []:
         print("R is transitive")
     else:
@@ -124,8 +137,10 @@ def transitive(list_r):
 
 #
 # Trial Data
-list_r = [[1, 2], [1, 1], [2, 3], [4, 6], [1, 3]]
-user_input_A = [1, 3, 4, 5]
+# list_r = [[2, 3], [4, 4], [5, 5], [5, 2], [2, 4]]
+# user_input_A = [1, 2, 4, 5]
+list_r = [[2, 3], [4, 4], [5, 5], [5, 2], [2, 4]]
+user_input_A = [1, 2, 3, 4]
 # # Calls the functions
 print(checking_duplicatesR())
 cartesian_product_A(user_input_A)
@@ -134,4 +149,4 @@ checking_R_relation_A()
 reflexive(list_r, user_input_A)
 transitive(list_r)
 symmetric(list_r_symmetry)
-# symmetric(list_r)
+
