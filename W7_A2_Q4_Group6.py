@@ -33,12 +33,14 @@ product_a = []
 # Functions
 
 # Checking if R is a set by checking if the list R has any duplicate values
+list_r_set = []
 def checking_duplicatesR():
     """Checking if the given list R contains any duplicates"""
     for elem in list_r:
         if list_r.count(elem) > 1:
             return "R is not a set"
         else:
+            list_r_set.append(1)
             return "R is a set"
 
 
@@ -52,18 +54,11 @@ def cartesian_product_A(user_input_A):
 
 
 # checking if R is a subset of A x A
-# def r_subset_cartesian_productA(product_a, list_r):
-#     """Checking if R is a subset of the cartesian product of A"""
-#     # The condition to check whether the list R is a subset of cartesian product of A
-#     for item in list_r:
-#         if item not in product_a:
-#             print("R is not a subset of A * A")
-#             # return "R is not a subset of A * A"
-#         else:
-#             return "R is a subset of A * A"
+list_r_s = []
 def r_subset_cartesian_productA(product_a, list_r):
     for item in list_r:
         if item[0] in product_a and item[1] in product_a:
+            list_r_s.append(1)
             return 'R is a subset of A'
         else:
             return 'R is not a subset of A'
@@ -71,14 +66,8 @@ def r_subset_cartesian_productA(product_a, list_r):
 
 
 # showing that R is not a relation on A
-# def checking_R_relation_A():
-#     if list_r == "R is a set":
-#         if list_r == "R is a subset of A":
-#             print("R is a relation on A")
-        # else:
-        #     print("R is not a relation on A")
 def checking_R_relation_A():
-    if list_r == "R is a set" and list_r == "R is a subset of A":
+    if list_r_s == [1] and list_r_set == [1]:
         print("R is a relation on A")
     else:
         print("R is not a relation on A")
@@ -91,7 +80,12 @@ def reflexive(list_r, user_input_A):
         list_relation = [a, a]
         if list_relation not in list_r:
             values_not_reflexive.append(a)
-    print('R is not reflexive : ', values_not_reflexive)
+    if len(values_not_reflexive) > 0:
+        print("R is not reflexive", values_not_reflexive)
+    else:
+        print("R is reflexive")
+
+
 
 
 # Checking for the property on symmetry on R
@@ -117,8 +111,7 @@ list_r_symmetry = [[2, 3], [4, 4], [5, 5], [5, 2], [2, 4]]
 list_true = []
 
 
-#
-#
+
 # # Checks of R is symmetric
 def transitive(list_r):
     list_present = []
@@ -135,10 +128,7 @@ def transitive(list_r):
         print("R is not transitive", list_present)
 
 
-#
 # Trial Data
-# list_r = [[2, 3], [4, 4], [5, 5], [5, 2], [2, 4]]
-# user_input_A = [1, 2, 4, 5]
 list_r = [[2, 3], [4, 4], [5, 5], [5, 2], [2, 4]]
 user_input_A = [1, 2, 3, 4]
 # # Calls the functions
