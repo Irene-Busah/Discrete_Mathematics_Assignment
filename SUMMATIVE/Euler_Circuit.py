@@ -157,7 +157,7 @@ class Graph(Draw_Graph):
             # 2.d) If count1 is greater, then edge (u, v) is a bridge
             return False if count1 > count2 else True
 
-    # Print Euler tour starting from vertex u
+    # Print Euler path starting from vertex u
     def print_euler_graph(self, u):
         # Recur for all the vertices adjacent to this vertex
         for v in self.graph[u]:
@@ -178,12 +178,11 @@ to print the path '''
             if len(self.graph[i]) % 2 != 0:
                 u = i
                 break
-        # Print tour starting from odd vertex
-        print("\n")
+        # Print path of the graph starting from odd vertex
         self.print_euler_graph(u)
 
 
-# Create a graph given in the above diagram
+# Create a graph instances
 
 graph_one = Graph(10)
 graph_one.add_edge(0, 1)
