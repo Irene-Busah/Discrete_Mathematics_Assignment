@@ -17,7 +17,6 @@
 # The list containing the cartesian product of A(A * A)
 product_a = []
 
-
 # -------Code for to get user input for the values for the list R------
 # Input list R
 # Number of sub lists
@@ -34,6 +33,8 @@ product_a = []
 
 # Checking if R is a set by checking if the list R has any duplicate values
 list_r_set = []
+
+
 def checking_duplicatesR():
     """Checking if the given list R contains any duplicates"""
     for elem in list_r:
@@ -55,6 +56,8 @@ def cartesian_product_A(user_input_A):
 
 # checking if R is a subset of A x A
 list_r_s = []
+
+
 def r_subset_cartesian_productA(product_a, list_r):
     for item in list_r:
         if item[0] in product_a and item[1] in product_a:
@@ -62,7 +65,6 @@ def r_subset_cartesian_productA(product_a, list_r):
             return 'R is a subset of A'
         else:
             return 'R is not a subset of A'
-
 
 
 # showing that R is not a relation on A
@@ -85,9 +87,9 @@ def reflexive(list_r, user_input_A):
     else:
         print("R is reflexive")
 
-
-
-
+# Test Data used
+list_r = [[2, 3], [4, 4], [5, 5], [5, 2], [2, 4]]
+user_input_A = [1, 2, 3, 4]
 # Checking for the property on symmetry on R
 def symmetric(list_r_symmetry):
     values_not_symmetric = []
@@ -96,7 +98,6 @@ def symmetric(list_r_symmetry):
             if x[0] == y[1] and x[1] == y[0] and x not in list_true and y not in list_true:
                 list_true.append(x)
                 list_true.append(y)
-                # print(list_true)
     if list_true == list_r_symmetry:
         print("R is symmetric")
     else:
@@ -110,9 +111,7 @@ def symmetric(list_r_symmetry):
 list_r_symmetry = [[2, 3], [4, 4], [5, 5], [5, 2], [2, 4]]
 list_true = []
 
-
-
-# # Checks of R is symmetric
+# #Checks of R is symmetric
 def transitive(list_r):
     list_present = []
     for x in list_r:
@@ -139,4 +138,3 @@ checking_R_relation_A()
 reflexive(list_r, user_input_A)
 transitive(list_r)
 symmetric(list_r_symmetry)
-
