@@ -1,5 +1,5 @@
 from collections import defaultdict
-
+import random
 
 # # This class represents a undirected graph using adjacency list representation
 class Draw_Graph:
@@ -11,7 +11,9 @@ class Draw_Graph:
         self.graph = defaultdict(list)
 
     # The method adds an edge to graph randomly
-    def add_edge(self, u, v):
+    def add_edge(self):
+        u = random.randrange(0, 10)
+        v = random.randrange(0, 10)
         self.graph[u].append(v)
         self.graph[v].append(u)
 
@@ -80,13 +82,19 @@ class Draw_Graph:
 
     # Function to run test cases
     def test(self):
+        cycle_count = 0
+        graph_count = 0
         res = self.eulerian_graph()
+        graph_count += 1
         if res == 0:
             print("No! Graph is not a Euler circuit")
         elif res == 1:
             print("No! is not a Euler circuit, graph has a Euler path instead")
         else:
             print(" Yes! graph has a Euler circuit")
+            cycle_count += 1
+            probability1 = cycle_count / graph_count
+            print(probability1)
 
 
 # # Let us create a graph with all vertices
@@ -105,8 +113,10 @@ class Graph(Draw_Graph):
         self.graph = defaultdict(list)  # default dictionary to store graph
         self.Time = 0
 
-    # function to add an edge to graph
-    def add_edge(self, u, v):
+    # function to add a randomly generated edge to graph
+    def add_edge(self):
+        u = random.randrange(0, 10)
+        v = random.randrange(0, 10)
         self.graph[u].append(v)
         self.graph[v].append(u)
 
@@ -152,7 +162,7 @@ class Graph(Draw_Graph):
             count2 = self.DFSCount(u, visited)
 
             # 2.c) Add the edge back to the graph
-            self.add_edge(u, v)
+            self.add_edge()
 
             # 2.d) If count1 is greater, then edge (u, v) is a bridge
             return False if count1 > count2 else True
@@ -171,7 +181,7 @@ class Graph(Draw_Graph):
 degree vertex (if there is any) and then calls printEulerUtil()
 to print the path '''
 
-    def printEulerTour(self):
+    def printEulerPath(self):
         # Find a vertex with odd degree
         u = 0
         for i in range(self.vertices):
@@ -184,75 +194,16 @@ to print the path '''
 
 # Create a graph instances
 
-graph_one = Graph(10)
-graph_one.add_edge(0, 1)
-graph_one.add_edge(0, 2)
-graph_one.add_edge(1, 2)
-graph_one.add_edge(2, 3)
-graph_one.add_edge(1, 3)
-graph_one.test()
-graph_one.printEulerTour()
-
-graph_two = Graph(10)
-graph_two.add_edge(0, 1)
-graph_two.add_edge(1, 2)
-graph_two.add_edge(2, 0)
-graph_two.test()
-graph_two.printEulerTour()
-
 graph_three = Graph(10)
-graph_three.add_edge(1, 0)
-graph_three.add_edge(0, 2)
-graph_three.add_edge(2, 1)
-graph_three.add_edge(0, 3)
-graph_three.add_edge(3, 4)
-graph_three.add_edge(3, 2)
-graph_three.add_edge(3, 1)
-graph_three.add_edge(2, 4)
+graph_three.add_edge()
+graph_three.add_edge()
+graph_three.add_edge()
+graph_three.add_edge()
+graph_three.add_edge()
+graph_three.add_edge()
+graph_three.add_edge()
+graph_three.add_edge()
 graph_three.test()
-graph_three.printEulerTour()
+graph_three.printEulerPath()
 
-graph_four = Graph(10)
-graph_four.add_edge(0, 1)
-graph_four.add_edge(1, 2)
-graph_four.add_edge(2, 0)
-graph_four.add_edge(0, 3)
-graph_four.add_edge(1, 3)
-graph_four.add_edge(3, 0)
-graph_four.add_edge(3, 1)
-graph_four.test()
-graph_four.printEulerTour()
 
-graph_five = Graph(10)
-graph_five.add_edge(0, 1)
-graph_five.add_edge(1, 2)
-graph_five.add_edge(2, 3)
-graph_five.add_edge(1, 3)
-graph_five.add_edge(3, 0)
-graph_five.test()
-graph_five.printEulerTour()
-
-graph_six = Graph(10)
-graph_six.add_edge(0, 1)
-graph_six.add_edge(1, 2)
-graph_six.add_edge(2, 3)
-graph_six.add_edge(3, 4)
-graph_six.add_edge(4, 5)
-graph_six.add_edge(5, 6)
-graph_six.add_edge(6, 0)
-graph_six.test()
-graph_six.printEulerTour()
-
-graph_seven = Graph(10)
-graph_seven.add_edge(0, 1)
-graph_seven.add_edge(1, 2)
-graph_seven.add_edge(2, 3)
-graph_seven.add_edge(3, 4)
-graph_seven.add_edge(4, 5)
-graph_seven.add_edge(5, 0)
-graph_seven.test()
-graph_seven.printEulerTour()
-
-# calculation of the probability of getting a graph that is an Euler circuit with a connected graph
-probability = 4 / 7
-print(probability)
