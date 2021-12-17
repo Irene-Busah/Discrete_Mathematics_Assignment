@@ -97,10 +97,7 @@ class Draw_Graph:
             print(probability1)
 
 
-# # Let us create a graph with all vertices
-# # with zero degree
-# g5 = Graph(3)
-# g5.test()
+
 
 # Python program print Eulerian Trail in a given Eulerian or Semi-Eulerian Graph
 
