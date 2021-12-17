@@ -117,6 +117,7 @@ class Graph(Draw_Graph):
     def add_edge(self):
         u = random.randrange(0, 10)
         v = random.randrange(0, 10)
+        # checking if the graph is simple in that it does not contain any loops 
         if u == v:
             self.add_edge()
         else:
