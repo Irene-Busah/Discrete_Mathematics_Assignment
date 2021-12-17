@@ -117,8 +117,12 @@ class Graph(Draw_Graph):
     def add_edge(self):
         u = random.randrange(0, 10)
         v = random.randrange(0, 10)
-        self.graph[u].append(v)
-        self.graph[v].append(u)
+        if u == v:
+            self.add_edge()
+        else:
+            self.graph[u].append(v)
+            self.graph[v].append(u)
+
 
     # This function removes edge u-v from graph
     def remove_edge(self, u, v):
