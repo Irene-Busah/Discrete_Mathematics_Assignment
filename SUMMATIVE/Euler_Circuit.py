@@ -117,7 +117,7 @@ class Graph(Draw_Graph):
     def add_edge(self):
         u = random.randrange(0, 10)
         v = random.randrange(0, 10)
-        # checking if the graph is simple in that it does not contain any loops 
+        # checking if the graph is simple in that it does not contain any loops
         if u == v:
             self.add_edge()
         else:
@@ -197,8 +197,7 @@ to print the path '''
         self.print_euler_graph(u)
 
 
-# Create a graph instances
-
+# Create a graph instance
 graph_three = Graph(10)
 graph_three.add_edge()
 graph_three.add_edge()
