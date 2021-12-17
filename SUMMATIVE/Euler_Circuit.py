@@ -149,14 +149,14 @@ class Graph(Draw_Graph):
         else:
             '''
            2) If there are multiple adjacents, then u-v is not a bridge
-               Do following steps to check if u-v is a bridge
+               We take the following steps to check if u-v is a bridge
 
-           2.a) count of vertices reachable from u'''
+           2.a) We count the number of vertices reachable from u'''
             visited = [False] * self.vertices
             count1 = self.DFSCount(u, visited)
 
-            '''2.b) Remove edge (u, v) and after removing the edge, count
-               vertices reachable from u'''
+            '''2.b) We remove edge (u, v) and after removing the edge, we count
+               vertices that are reachable from u'''
             self.remove_edge(u, v)
             visited = [False] * self.vertices
             count2 = self.DFSCount(u, visited)
@@ -177,7 +177,7 @@ class Graph(Draw_Graph):
                 self.remove_edge(u, v)
                 self.print_euler_graph(v)
 
-    '''The main function that print Eulerian Trail. It first finds an odd
+    '''The main method that will print Eulerian Trail. It first finds an odd
 degree vertex (if there is any) and then calls printEulerUtil()
 to print the path '''
 
